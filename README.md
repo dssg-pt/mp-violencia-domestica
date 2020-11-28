@@ -33,11 +33,11 @@ Este Mini-Projecto compreende os seguintes blocos de trabalho:
 1. Identificação de fontes de dados abertas relativos a violência doméstica
 2. Criação de um repositório pensado para ser continuamente alimentado
 3. Definição das métricas a apresentar na _dashboard_. Algumas possíveis:
-  - nº/% de casos por zona
-  - nº/% de casos por faixa etária
-  - nº/% de casos por sexo
-  - nº/% de casos por grupo social
-  - nº/% de casos por estado civil
+   - nº/% de casos por zona
+   - nº/% de casos por faixa etária
+   - nº/% de casos por sexo
+   - nº/% de casos por grupo social
+   - nº/% de casos por estado civil
 4. Identificação da melhor fonte para cada métrica e verificação da coerência dos dados provenientes das diversas fontes
 5. Definição da melhor visualização para cada métrica
 6. Construção do dashboard com as métricas mais relevantes de forma a ser automaticamente atualizável, com indicação explícita das fontes usadas
