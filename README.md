@@ -1,6 +1,6 @@
 ![DSGG Portugal](assets/dssg_logo_lettering.png)
 
-# 👶🚀 Mini-Projecto Violência Doméstica 
+# Mini-Projecto Violência Doméstica 
 
 Este é o repositório do Mini-Projecto DSSG PT acerca de Violência Doméstica..
 
