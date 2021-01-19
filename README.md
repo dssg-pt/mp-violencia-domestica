@@ -61,10 +61,6 @@ Dado o tamanho da equipa e os resultados finais descritos, este mini-projecto te
 
 **TODO**: Ambientes virtuais, dependências, etc. 
 
-# 👉 Chegaste aqui e queres juntar-te a este Mini-Projecto?
-
-Vê a [#1](/../../issues/1).
-
 --- 
 
 ## 📜 Sobre os Mini-Projectos
