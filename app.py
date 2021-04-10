@@ -47,7 +47,7 @@ sidebar = html.Div(
 
 def get_data():
 
-    df_registos = pd.read_csv("data/data.csv", sep=";")
+    df_registos = pd.read_csv("data/data_old.csv", sep=";")
     df = geopandas.read_file("data/concelhos.shp")
 
     df_registos = df_registos[df_registos["ano"] == 2017]
