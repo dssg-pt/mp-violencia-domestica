@@ -13,7 +13,7 @@ from shapely.geometry import mapping
 from dash.dependencies import Input, Output, State
 from simpledbf import Dbf5
 
-from static_graphs import contact_type_graph, age_by_sex_graph
+from dashboard_components import contact_type_graph, age_by_sex_graph
 ##
 
 df = px.data.tips()
@@ -109,6 +109,12 @@ def update_content(fig):
                          style={'width': '80%', "display": "inline-block", 'vertical-align': 'top'}, id="left_div")])
 
 
+
+
+
+
+
+
 @app.callback(Output("page-content", "children"), Input("url", "pathname"), Input("memory_output", "data"))
 def render_page_content(pathname, data):
     if pathname == "/":
@@ -119,6 +125,12 @@ def render_page_content(pathname, data):
     elif pathname == "/cartographic_view":
         fig = build_fig(metric="incidencia")
         return update_content(fig)
+
+
+
+
+
+
 
 
 @app.callback(Output("memory_output", "data"), [Input("dropdown1", "value")])
