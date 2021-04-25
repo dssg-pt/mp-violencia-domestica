@@ -8,7 +8,6 @@ import plotly.graph_objects as go
 import numpy as np
 import copy
 
-mapbox_access_token = "pk.eyJ1IjoicGxvdGx5bWFwYm94IiwiYSI6ImNrOWJqb2F4djBnMjEzbG50amg0dnJieG4ifQ.Zme1-Uzoi75IaFbieBDl3A"
 layout = dict(
     autosize=True,
     automargin=True,
@@ -83,3 +82,15 @@ layout_2["title"] = "CASOS POR SEXO/IDADE"
 
 layout_2["font"] = dict(color="#777777")
 age_by_sex_graph = (dict(data=data_2, layout=layout_2))
+
+
+
+metric_dropdown = dcc.Dropdown(
+    id="drop_down1",
+    options=[
+        {'label': 'Crimes Registados', 'value': 'nr_crimes'},
+        {'label': 'Incidência', 'value': 'incidencia'},
+        {'label': 'Tendência', 'value': 'tendencia'}
+    ],
+    placeholder="Selecione uma métrica",
+)
