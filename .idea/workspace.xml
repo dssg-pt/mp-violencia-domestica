@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0aa87493-60ec-454d-86fd-975dcd7e5d4e" name="Default Changelist" comment="Add doc; add/fix Auxiliary files;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard_components.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard_components.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +78,7 @@
       <workItem from="1618651262811" duration="271000" />
       <workItem from="1618651555295" duration="1466000" />
       <workItem from="1619252584664" duration="165000" />
-      <workItem from="1619339800730" duration="597000" />
+      <workItem from="1619339800730" duration="1591000" />
     </task>
     <task id="LOCAL-00001" summary="Add old data, and fix the app.py reference to data.">
       <created>1618046413228</created>
