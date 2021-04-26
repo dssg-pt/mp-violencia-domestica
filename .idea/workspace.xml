@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0aa87493-60ec-454d-86fd-975dcd7e5d4e" name="Default Changelist" comment="Add doc; add/fix Auxiliary files;">
+    <list default="true" id="0aa87493-60ec-454d-86fd-975dcd7e5d4e" name="Default Changelist" comment="Add procfile to config dyno">
+      <change beforePath="$PROJECT_DIR$/.idea/mp-violencia-domestica.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/mp-violencia-domestica.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +65,11 @@
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Projects\DSSG\mp-violencia-domestica\assets" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
@@ -78,7 +85,7 @@
       <workItem from="1618651262811" duration="271000" />
       <workItem from="1618651555295" duration="1466000" />
       <workItem from="1619252584664" duration="165000" />
-      <workItem from="1619339800730" duration="1591000" />
+      <workItem from="1619339800730" duration="4205000" />
     </task>
     <task id="LOCAL-00001" summary="Add old data, and fix the app.py reference to data.">
       <created>1618046413228</created>
@@ -94,7 +101,35 @@
       <option name="project" value="LOCAL" />
       <updated>1618050025821</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Fix requirements.txt to heroku build.">
+      <created>1619341718141</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1619341718141</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Fix requirements.txt to heroku build.">
+      <created>1619342495939</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1619342495939</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Add favicon.ico">
+      <created>1619420874226</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1619420874226</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Add procfile to config dyno">
+      <created>1619421995008</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1619421995008</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -139,7 +174,10 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add old data, and fix the app.py reference to data." />
     <MESSAGE value="Add doc; add/fix Auxiliary files;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add doc; add/fix Auxiliary files;" />
+    <MESSAGE value="Fix requirements.txt to heroku build." />
+    <MESSAGE value="Add favicon.ico" />
+    <MESSAGE value="Add procfile to config dyno" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add procfile to config dyno" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app.py">
