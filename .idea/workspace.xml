@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0aa87493-60ec-454d-86fd-975dcd7e5d4e" name="Default Changelist" comment="Add procfile to config dyno">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+    <list default="true" id="0aa87493-60ec-454d-86fd-975dcd7e5d4e" name="Default Changelist" comment="Fix app and procfile">
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +82,7 @@
       <workItem from="1618651262811" duration="271000" />
       <workItem from="1618651555295" duration="1466000" />
       <workItem from="1619252584664" duration="165000" />
-      <workItem from="1619339800730" duration="4560000" />
+      <workItem from="1619339800730" duration="4832000" />
     </task>
     <task id="LOCAL-00001" summary="Add old data, and fix the app.py reference to data.">
       <created>1618046413228</created>
@@ -128,7 +126,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619421995008</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Fix app and procfile">
+      <created>1619422983835</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1619422983835</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -176,7 +181,8 @@
     <MESSAGE value="Fix requirements.txt to heroku build." />
     <MESSAGE value="Add favicon.ico" />
     <MESSAGE value="Add procfile to config dyno" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add procfile to config dyno" />
+    <MESSAGE value="Fix app and procfile" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix app and procfile" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app.py">
