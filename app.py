@@ -24,6 +24,7 @@ fig = px.pie(df, values='tip', names='day', color_discrete_sequence=px.colors.se
 external_stylesheets = [dbc.themes.BOOTSTRAP]
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets, suppress_callback_exceptions=True)
+server = app.server
 
 sidebar = html.Div(
     [
@@ -231,7 +232,6 @@ def get_general_view():
     )
 
 if __name__ == '__main__':
-    server = app.server
     app.run_server(debug=True)
 
 
