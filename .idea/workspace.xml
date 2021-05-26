@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0aa87493-60ec-454d-86fd-975dcd7e5d4e" name="Default Changelist" comment="Fix requirements.txt (add gunicorn)">
+      <change afterPath="$PROJECT_DIR$/.idea/other.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/csv-plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/csv-plugin.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_25_2021_10_04_AM_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_25_2021_10_04_AM__Default_Changelist_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +64,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -83,7 +89,17 @@
       <workItem from="1618651262811" duration="271000" />
       <workItem from="1618651555295" duration="1466000" />
       <workItem from="1619252584664" duration="165000" />
-      <workItem from="1619339800730" duration="5085000" />
+      <workItem from="1619339800730" duration="5866000" />
+      <workItem from="1619616861706" duration="12000" />
+      <workItem from="1620318310885" duration="151000" />
+      <workItem from="1620459741990" duration="861000" />
+      <workItem from="1620461069556" duration="614000" />
+      <workItem from="1620552270751" duration="1192000" />
+      <workItem from="1620892633740" duration="2909000" />
+      <workItem from="1620980183531" duration="8089000" />
+      <workItem from="1621082450433" duration="863000" />
+      <workItem from="1621240827790" duration="8706000" />
+      <workItem from="1621673352089" duration="4641000" />
     </task>
     <task id="LOCAL-00001" summary="Add old data, and fix the app.py reference to data.">
       <created>1618046413228</created>

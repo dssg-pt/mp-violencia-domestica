@@ -57,3 +57,40 @@ def update_content(fig):
                          style={'width': '80%', "display": "inline-block", 'vertical-align': 'top'}, id="left_div")])
 
 
+def build_gen_view_figs(year, all_country, county1, county2,counties_options):
+    dummy_data = pd.read_csv("data/data.csv", sep=",")
+
+    dummy_data = dummy_data[(dummy_data["ano"]>=year[0]) & (dummy_data["ano"]<=year[1])]
+
+    if (not all_country) & (county1 is not None) & (county2 is not None):
+        dummy_data_1 = dummy_data[dummy_data["codigo_municipio"] ==int(county1)]
+        dummy_data_2 = dummy_data[dummy_data["codigo_municipio"] ==int(county2)]
+        county1_label = [x['label'] for x in counties_options if x['value'] == county1][0]
+        county2_label = [x['label'] for x in counties_options if x['value'] == county2][0]
+
+        victim_sex_fig= px.bar(x=["Feminino","Masculino"], y=[dummy_data["num_vitima_feminina"].sum(),dummy_data["num_vitima_masculina"].sum()],barmode="group", title="Sexo", color=[county1_label,county2_label])
+        victim_age_fig= px.bar(x=["0-3","35","5-10","10-17","17-24","24-34","34-44","44-54","54-64",">65"], y=dummy_data[["num_vitima_idade_3","num_vitima_idade_5","num_vitima_idade_10","num_vitima_idade_17","num_vitima_idade_24","num_vitima_idade_34","num_vitima_idade_44","num_vitima_idade_54","num_vitima_idade_64","num_vitima_idade_mais_65"]].sum())
+        victim_mariptual_state_fig= px.bar(x=["Feminino","Masculino"], y=dummy_data[["num_vitima_feminina","num_vitima_masculina"]].sum())
+        victim_relation_woffender_fig= px.bar(x=["Feminino","Masculino"], y=dummy_data[["num_vitima_feminina","num_vitima_masculina"]].sum())
+        offender_sex_fig= px.bar(x=["Feminino","Masculino"], y=dummy_data[["num_vitima_feminina","num_vitima_masculina"]].sum())
+        offender_age_fig= px.bar(x=["Feminino","Masculino"], y=dummy_data[["num_vitima_feminina","num_vitima_masculina"]].sum())
+        offender_mariptual_state_fig=px.bar(x=["Feminino","Masculino"], y=dummy_data[["num_vitima_feminina","num_vitima_masculina"]].sum())
+        offender_relation_wvictim_fig= px.bar(x=["Feminino","Masculino"], y=dummy_data[["num_vitima_feminina","num_vitima_masculina"]].sum())
+        criminal_fact_type_fig= px.bar(x=["Feminino","Masculino"], y=dummy_data[["num_vitima_feminina","num_vitima_masculina"]].sum())
+        criminal_fact_duration_fig= px.bar(x=["Feminino","Masculino"], y=dummy_data[["num_vitima_feminina","num_vitima_masculina"]].sum())
+        criminal_fact_local_fig = px.bar(x=["Feminino","Masculino"], y=dummy_data[["num_vitima_feminina","num_vitima_masculina"]].sum())
+    else:
+        victim_sex_fig= px.bar(x=["Feminino","Masculino"], y=dummy_data[["num_vitima_feminina","num_vitima_masculina"]].sum(), title="Sexo")
+        victim_age_fig= px.bar(x=["0-3","35","5-10","10-17","17-24","24-34","34-44","44-54","54-64",">65"], y=dummy_data[["num_vitima_idade_3","num_vitima_idade_5","num_vitima_idade_10","num_vitima_idade_17","num_vitima_idade_24","num_vitima_idade_34","num_vitima_idade_44","num_vitima_idade_54","num_vitima_idade_64","num_vitima_idade_mais_65"]].sum())
+        victim_mariptual_state_fig= px.bar(x=["Feminino","Masculino"], y=dummy_data[["num_vitima_feminina","num_vitima_masculina"]].sum())
+        victim_relation_woffender_fig= px.bar(x=["Feminino","Masculino"], y=dummy_data[["num_vitima_feminina","num_vitima_masculina"]].sum())
+        offender_sex_fig= px.bar(x=["Feminino","Masculino"], y=dummy_data[["num_vitima_feminina","num_vitima_masculina"]].sum())
+        offender_age_fig= px.bar(x=["Feminino","Masculino"], y=dummy_data[["num_vitima_feminina","num_vitima_masculina"]].sum())
+        offender_mariptual_state_fig=px.bar(x=["Feminino","Masculino"], y=dummy_data[["num_vitima_feminina","num_vitima_masculina"]].sum())
+        offender_relation_wvictim_fig= px.bar(x=["Feminino","Masculino"], y=dummy_data[["num_vitima_feminina","num_vitima_masculina"]].sum())
+        criminal_fact_type_fig= px.bar(x=["Feminino","Masculino"], y=dummy_data[["num_vitima_feminina","num_vitima_masculina"]].sum())
+        criminal_fact_duration_fig= px.bar(x=["Feminino","Masculino"], y=dummy_data[["num_vitima_feminina","num_vitima_masculina"]].sum())
+        criminal_fact_local_fig = px.bar(x=["Feminino","Masculino"], y=dummy_data[["num_vitima_feminina","num_vitima_masculina"]].sum())
+
+    return victim_sex_fig,victim_age_fig, victim_mariptual_state_fig, victim_relation_woffender_fig,offender_sex_fig,offender_age_fig,offender_mariptual_state_fig,offender_relation_wvictim_fig,criminal_fact_type_fig,criminal_fact_duration_fig,criminal_fact_local_fig
+
