@@ -12,6 +12,10 @@ body {
   width: 16.25%;
 }
 
+.pie_chart {
+    width:90%
+}
+
 .column,
 .columns {
   margin-left: 0.5%;
@@ -94,13 +98,26 @@ body {
 }
 
 .mini_container {
-  width: 23.5%;
+  width: 28.75%;
   border-radius: 5px;
   margin: 10px;
   padding: 10px;
   position: relative;
   box-shadow: 2px 2px 2px lightgrey;
   background-color: #ff000033;
+}
+
+
+
+.profile_container {
+width: 28.75%;
+background-color: #c5d9e6;
+box-shadow: 2px 2px 2px lightgrey;
+border-radius: 5px;
+margin: 10px;
+padding: 10px;
+position: relative;
+
 }
 
 .mini_container p {

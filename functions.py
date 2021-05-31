@@ -7,11 +7,21 @@ from geojson import FeatureCollection
 import plotly.express as px
 import dash_html_components as html
 import dash_core_components as dcc
+import json
 
-from dashboard_components import metric_dropdown
-# function doc
+from dashboard_components import *
+
+metric_dropdown = dcc.Dropdown(
+    id="drop_down1",
+    options=[
+        {'label': 'Crimes Registados', 'value': 'nr_crimes'},
+        {'label': 'Incidência', 'value': 'incidencia'},
+        {'label': 'Tendência', 'value': 'tendencia'}
+    ],
+    placeholder="Selecione uma métrica"
+)
+
 def get_data():
-
     df_registos = pd.read_csv("data/data_old.csv", sep=";")
     df = geopandas.read_file("data/concelhos.shp")
 
@@ -33,9 +43,9 @@ def get_data():
 
     return df_data, geojson
 
+
 # function doc
 def build_fig(metric, df_data, geojson):
-
     fig = px.choropleth(
         df_data,
         geojson=geojson,
@@ -49,11 +59,19 @@ def build_fig(metric, df_data, geojson):
     fig.update_traces(colorbar_xpad=2, colorbar_x=-1.5, selector=dict(type='choropleth'))
     return fig
 
+
 # function doc
 def update_content(fig):
-    return html.Div([html.Div([html.Div(metric_dropdown, id="div1"), html.Div({}, id="div2")],
-                                  style={'width': '20%', "display": "inline-block", 'vertical-align': 'top'},
-                                  id="parent_div"), html.Div(dcc.Graph(id='portugal_continental', figure=fig),
-                         style={'width': '80%', "display": "inline-block", 'vertical-align': 'top'}, id="left_div")])
+    return html.Div([html.Div(className="Row", children=[html.Div(metric_dropdown, id="div1"), html.Div({}, id="div2")],
+                              style={'width': '30%', "display": "inline-block", 'vertical-align': 'top'},
+                              id="parent_div"), html.Div(dcc.Graph(id='portugal_continental', figure=fig),
+                                                         style={'width': '70%', "display": "inline-block",
+                                                                'vertical-align': 'top'}, id="left_div")])
+
+
+def get_data_overview():
+    data_overview = pd.read_csv("data/data_overview.csv", sep=";")
+    return data_overview
+
 
 
