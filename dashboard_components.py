@@ -8,7 +8,7 @@ import plotly.graph_objects as go
 import numpy as np
 import copy
 
-from functions import get_data_overview
+from functions import get_data_overview, get_data
 
 layout = dict(
     autosize=True,
@@ -229,6 +229,10 @@ layout_2["title"] = "CASOS POR PERFIL/IDADE"
 
 layout_2["font"] = dict(color="#777777")
 age_by_sex_graph = (dict(data=data_2, layout=layout_2))
+
+
+
+
 
 
 

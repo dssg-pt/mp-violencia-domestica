@@ -16,7 +16,7 @@ from simpledbf import Dbf5
 
 from dash.exceptions import PreventUpdate
 from dashboard_components import *
-from functions import get_data, build_fig, update_content, get_data_overview, build_gen_view_figs
+from functions import get_choropleth_globalview, get_data, build_fig, update_content, get_data_overview, build_gen_view_figs
 from support import CONCELHOS 
 ##
 counties_options = [
@@ -460,6 +460,9 @@ def get_global_view():
                             id = 'county2_dpdn'
                         )
                     ], style={"width":"50%", }),
+
+                    dcc.Graph(id="choro_global", )
+
                  ], style={'width': '40%'}),
 
                 html.Div(
@@ -517,14 +520,15 @@ def update_county_filters(value, county1, county2):
     return value, value, county1, county2, counties_options_1, counties_options_2;
 
 @app.callback([Output('victim_sex', 'figure'),Output('victim_age', 'figure'),Output('victim_mariptual_state', 'figure'),Output('victim_relation_woffender', 'figure'),Output('offender_sex', 'figure'),Output('offender_age', 'figure'),
-    Output('offender_mariptual_state', 'figure'),Output('offender_relation_wvictim', 'figure'),Output('criminal_fact_type', 'figure'),Output('criminal_fact_duration', 'figure'),Output('criminal_fact_local', 'figure')],
+    Output('offender_mariptual_state', 'figure'),Output('offender_relation_wvictim', 'figure'),Output('criminal_fact_type', 'figure'),Output('criminal_fact_duration', 'figure'),Output('criminal_fact_local', 'figure'), Output('choro_global', 'figure')],
     [dash.dependencies.Input('my-toggle-switch', 'on'), dash.dependencies.Input('year_slider', 'value'), dash.dependencies.Input('county1_dpdn', 'value'),dash.dependencies.Input('county2_dpdn', 'value')]
 )
+
 def update_da(all_country,year, county1, county2):
   ###  this method return all figs to present on the view 
     transformed_value = [v for v in year]
-    victim_sex_fig, victim_age_fig, victim_mariptual_state_fig, victim_relation_woffender_fig, offender_sex_fig, offender_age_fig, offender_mariptual_state_fig, offender_relation_wvictim_fig, criminal_fact_type_fig, criminal_fact_duration_fig, criminal_fact_local_fig = build_gen_view_figs(transformed_value, all_country, county1, county2, counties_options)
-    return victim_sex_fig, victim_age_fig, victim_mariptual_state_fig, victim_relation_woffender_fig, offender_sex_fig, offender_age_fig, offender_mariptual_state_fig, offender_relation_wvictim_fig, criminal_fact_type_fig, criminal_fact_duration_fig, criminal_fact_local_fig
+    victim_sex_fig, victim_age_fig, victim_mariptual_state_fig, victim_relation_woffender_fig, offender_sex_fig, offender_age_fig, offender_mariptual_state_fig, offender_relation_wvictim_fig, criminal_fact_type_fig, criminal_fact_duration_fig, criminal_fact_local_fig, choropleth_global_view = build_gen_view_figs(transformed_value, all_country, county1, county2, counties_options)
+    return victim_sex_fig, victim_age_fig, victim_mariptual_state_fig, victim_relation_woffender_fig, offender_sex_fig, offender_age_fig, offender_mariptual_state_fig, offender_relation_wvictim_fig, criminal_fact_type_fig, criminal_fact_duration_fig, criminal_fact_local_fig, choropleth_global_view
 
 
 

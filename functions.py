@@ -42,6 +42,47 @@ def get_data():
 
     return df_data, geojson
 
+def get_choropleth_globalview(df, geojson, highlights=[]):
+
+    if not highlights:
+        opacity=1
+    else:
+        opacity=0.3
+    
+    choropleth_globalview = px.choropleth_mapbox(
+        data_frame=df, 
+        geojson=geojson,
+        locations="municipio",
+        color="incidencia",
+        center={"lat": 39.6753, "lon": -8.14679}, 
+        range_color=(0, df["incidencia"].max()),
+        opacity=opacity,
+        mapbox_style="carto-positron",
+        zoom=5.5,
+        )
+    if highlights:
+        choropleth_globalview.add_trace(
+
+            px.choropleth_mapbox(
+
+                data_frame=df[df["codigo_municipio"].isin(highlights)], 
+                geojson=geojson,
+                locations="municipio",
+                color="incidencia",
+                center={"lat": 39.6753, "lon": -8.14679}, 
+                range_color=(0, df["incidencia"].max()),
+                opacity=1,
+                mapbox_style="carto-positron",
+                zoom=5.5,
+        ).data[0]
+
+        )
+
+    choropleth_globalview.update_layout(margin={"r": 0, "t": 0, "l": 0, "b": 0})
+    #choropleth_globalview.update_traces(colorbar_xpad=2, colorbar_x=-1.5, selector=dict(type='choropleth'))
+    
+
+    return choropleth_globalview
 
 # function doc
 def build_fig(metric, df_data, geojson):
@@ -96,7 +137,11 @@ def build_gen_view_figs(year, all_country, county1, county2,counties_options):
         criminal_fact_type_fig= px.bar(x=["Feminino","Masculino"], y=dummy_data[["num_vitima_feminina","num_vitima_masculina"]].sum())
         criminal_fact_duration_fig= px.bar(x=["Feminino","Masculino"], y=dummy_data[["num_vitima_feminina","num_vitima_masculina"]].sum())
         criminal_fact_local_fig = px.bar(x=["Feminino","Masculino"], y=dummy_data[["num_vitima_feminina","num_vitima_masculina"]].sum())
+        
+        df, geojson = get_data()
+        choropleth_globalview=get_choropleth_globalview(df, geojson, highlights=[int(county1), int(county2)])
     else:
+
         victim_sex_fig= px.bar(x=["Feminino","Masculino"], y=dummy_data[["num_vitima_feminina","num_vitima_masculina"]].sum(), title="Sexo")
         victim_age_fig= px.bar(x=["0-3","35","5-10","10-17","17-24","24-34","34-44","44-54","54-64",">65"], y=dummy_data[["num_vitima_idade_3","num_vitima_idade_5","num_vitima_idade_10","num_vitima_idade_17","num_vitima_idade_24","num_vitima_idade_34","num_vitima_idade_44","num_vitima_idade_54","num_vitima_idade_64","num_vitima_idade_mais_65"]].sum())
         victim_mariptual_state_fig= px.bar(x=["Feminino","Masculino"], y=dummy_data[["num_vitima_feminina","num_vitima_masculina"]].sum())
@@ -109,5 +154,9 @@ def build_gen_view_figs(year, all_country, county1, county2,counties_options):
         criminal_fact_duration_fig= px.bar(x=["Feminino","Masculino"], y=dummy_data[["num_vitima_feminina","num_vitima_masculina"]].sum())
         criminal_fact_local_fig = px.bar(x=["Feminino","Masculino"], y=dummy_data[["num_vitima_feminina","num_vitima_masculina"]].sum())
 
-    return victim_sex_fig,victim_age_fig, victim_mariptual_state_fig, victim_relation_woffender_fig,offender_sex_fig,offender_age_fig,offender_mariptual_state_fig,offender_relation_wvictim_fig,criminal_fact_type_fig,criminal_fact_duration_fig,criminal_fact_local_fig
+
+        df, geojson = get_data()
+        choropleth_globalview=get_choropleth_globalview(df, geojson)
+
+    return victim_sex_fig,victim_age_fig, victim_mariptual_state_fig, victim_relation_woffender_fig,offender_sex_fig,offender_age_fig,offender_mariptual_state_fig,offender_relation_wvictim_fig,criminal_fact_type_fig,criminal_fact_duration_fig,criminal_fact_local_fig, choropleth_globalview
 
