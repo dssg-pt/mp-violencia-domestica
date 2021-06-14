@@ -19,8 +19,11 @@ from dashboard_components import *
 from functions import get_choropleth_globalview, get_data, build_fig, update_content, get_data_overview, build_gen_view_figs
 from support import CONCELHOS 
 ##
+
+sortedCONCELHOS = dict(sorted(CONCELHOS.items(), key=lambda x: x[1].lower()))
+
 counties_options = [
-    {"label": str(CONCELHOS[county]), "value": str(county)} for county in CONCELHOS
+    {"label": str(sortedCONCELHOS[county]), "value": str(county)} for county in sortedCONCELHOS
 ]
 
 dummy_data = pd.read_csv("data/data.csv", sep=",")
@@ -46,7 +49,7 @@ sidebar = html.Div([
         ),
         dbc.Nav(
             [
-                dbc.NavLink("Home", href="/", active="exact"),
+                dbc.NavLink("Sobre", href="/", active="exact"),
                 dbc.NavLink("Destaques", href="/page-1", active="exact"),
                 dbc.NavLink("Visão Global", href="/globalview", active="exact"),
                 dbc.NavLink("Dados Demográficos", href="/cartographic_view", active="exact"),
@@ -79,6 +82,7 @@ app.layout = html.Div([dcc.Location(id="url"), dcc.Store(id="memory_output", dat
     Output("collapse", "is_open"),
     Output('sidebar_icon', 'style'),
     Output('btn_sidebar', 'style'),
+    Output('page-content', 'style'),
     [Input("btn_sidebar", "n_clicks")],
     [State("collapse", "is_open")],
 )
@@ -90,23 +94,25 @@ def toggle_collapse(n, is_open):
 
             width="22rem"
             sidebar_style = {'height': '85%', 'width': '8.25%'}
+            content_style = {"margin-left":"17rem"}
 
         else:
 
             width="3.5rem"
             sidebar_style = {'height': '85%', 'width': '85%'}
+            content_style = {"margin-left":"0rem"}
 
         style={"position": "fixed", "top": 0, "left":0, "text-align": "left", 
         "width": width, "height": "2.5rem", "box-shadow":"none", "background-color": "#807d75", "border": "none"}
         
-        return not is_open, sidebar_style, style
+        return not is_open, sidebar_style, style, content_style
 
     sidebar_style = {'height': '85%', 'width': '85%'}
 
     style={"position": "fixed", "top": 0, "left":0, "text-align": "left", 
     "width": "3.5rem", "height": "2.5rem", "box-shadow":"none", "background-color": "#807d75", "border": "none"}
-    
-    return is_open, sidebar_style, style
+    content_style = {"margin-left":"0rem"}
+    return is_open, sidebar_style, style, content_style
 
 
 @app.callback(Output("page-content", "children"), Input("url", "pathname"), Input("memory_output", "data"))
@@ -119,11 +125,7 @@ def render_page_content(pathname, data):
     elif pathname == "/globalview":
         gen_view = get_global_view()
         return gen_view
-    elif pathname == "/cartographic_view":
-        fig = build_fig(metric="incidencia", df_data=df_data, geojson=geojson)
-        return update_content(fig)
-
-
+    
 def get_general_view():
     return html.Div(
         [
@@ -132,10 +134,10 @@ def get_general_view():
                     html.Div(
                         [
                             html.H1(
-                                "2017", style={"font-weight": "bold"}
+                                "APAV: Relatório Anual", style={"font-weight": "bold"}
                             ),
                             html.H2(
-                                "APAV: Relatório Anual", style={"margin-top": "0px", "font-weight": "bold"}
+                                "2017", style={"margin-top": "0px", "font-weight": "bold"}
                             ),
                         ]
                     )
