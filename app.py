@@ -33,31 +33,10 @@ external_stylesheets = [dbc.themes.BOOTSTRAP]
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets, suppress_callback_exceptions=True)
 server = app.server
-vbar = dbc.NavbarSimple(
-    children=[
-        dbc.Button("Sidebar", outline=True, color="secondary", className="mr-1", id="btn_sidebar"),
-        dbc.NavItem(dbc.NavLink("Page 1", href="#")),
-        dbc.DropdownMenu(
-            children=[
-                dbc.DropdownMenuItem("More pages", header=True),
-                dbc.DropdownMenuItem("Page 2", href="#"),
-                dbc.DropdownMenuItem("Page 3", href="#"),
-            ],
-            nav=True,
-            in_navbar=True,
-            label="More",
-        ),
-    ],
-    brand="Brand",
-    brand_href="#",
-    color="dark",
-    dark=True,
-    fluid=True,
-)
 
-
-
-sidebar = html.Div(
+sidebar = html.Div([
+    
+    dbc.Collapse( # Components inside collapse will be hidden
     [
         html.H6("Observatório Violência Doméstica", className="display-4", style={"fontSize": 20, "fontWeight": "bold"}),
         html.Div(html.Img(src=app.get_asset_url('dssg_logo_lettering.png'), style={'height': '20%', 'width': '50%'}), style={"textAlign":"center"}),
@@ -71,14 +50,22 @@ sidebar = html.Div(
                 dbc.NavLink("Destaques", href="/page-1", active="exact"),
                 dbc.NavLink("Visão Global", href="/globalview", active="exact"),
                 dbc.NavLink("Dados Demográficos", href="/cartographic_view", active="exact"),
-                dbc.Button("Sidebar", outline=True, color="secondary", className="mr-1", id="btn_sidebar"),
             ],
             vertical=True,
             pills=True,
         ),
+        
     ],
     className="sidebar"
-)
+    , id="collapse"),
+    
+    dbc.Button([html.Img(
+        id="sidebar_icon",
+        src=app.get_asset_url('sidebar_icon.png'),
+
+    ), html.Div(className="display-4")], outline=False, 
+    id="btn_sidebar",  
+    )])
 
 df_data, geojson = get_data()
 
@@ -87,6 +74,40 @@ tabs = dbc.Tabs([ dbc.Tab(label="Scatter", tab_id="scatter"), dbc.Tab(label="His
 
 app.layout = html.Div([dcc.Location(id="url"), dcc.Store(id="memory_output", data={"value": "nr_crimes"}), sidebar,
                        content, ])
+
+@app.callback(
+    Output("collapse", "is_open"),
+    Output('sidebar_icon', 'style'),
+    Output('btn_sidebar', 'style'),
+    [Input("btn_sidebar", "n_clicks")],
+    [State("collapse", "is_open")],
+)
+def toggle_collapse(n, is_open):
+    
+    if n:
+
+        if not is_open:
+
+            width="22rem"
+            sidebar_style = {'height': '85%', 'width': '8.25%'}
+
+        else:
+
+            width="3.5rem"
+            sidebar_style = {'height': '85%', 'width': '85%'}
+
+        style={"position": "fixed", "top": 0, "left":0, "text-align": "left", 
+        "width": width, "height": "2.5rem", "box-shadow":"none", "background-color": "#807d75", "border": "none"}
+        
+        return not is_open, sidebar_style, style
+
+    sidebar_style = {'height': '85%', 'width': '85%'}
+
+    style={"position": "fixed", "top": 0, "left":0, "text-align": "left", 
+    "width": "3.5rem", "height": "2.5rem", "box-shadow":"none", "background-color": "#807d75", "border": "none"}
+    
+    return is_open, sidebar_style, style
+
 
 @app.callback(Output("page-content", "children"), Input("url", "pathname"), Input("memory_output", "data"))
 def render_page_content(pathname, data):
