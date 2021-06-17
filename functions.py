@@ -132,17 +132,17 @@ def build_gen_view_figs(year, all_country, county1, county2,counties_options):
                 ])
 
         victim_age_fig = go.Figure(data=[
-                    go.Bar(name=county1_label, x=["0-10","11-17","18-25","25-35","36-45","46-55","55-65","65+"], y=dummy_data_1[['vitima_0_10','vitima_11_17','vitima_18_25','vitima_26_35','vitima_36_45','vitima_46_55','vitima_56_64','vitima_65+']].sum()),
-                    go.Bar(name=county2_label, x=["0-10","11-17","18-25","25-35","36-45","46-55","55-65","65+"], y=dummy_data_2[['vitima_0_10','vitima_11_17','vitima_18_25','vitima_26_35','vitima_36_45','vitima_46_55','vitima_56_64','vitima_65+']].sum()),
+                    go.Bar(name=county1_label, x=["0-10","11-17","18-25","25-35","36-45","46-55","55-65","65+"], y=dummy_data_1[['vitima_0_10','vitima_11_17','vitima_18_25','vitima_26_35','vitima_36_45','vitima_46_55','vitima_56_64','vitima_65+']].sum(), labels=dict(x="", y="")),
+                    go.Bar(name=county2_label, x=["0-10","11-17","18-25","25-35","36-45","46-55","55-65","65+"], y=dummy_data_2[['vitima_0_10','vitima_11_17','vitima_18_25','vitima_26_35','vitima_36_45','vitima_46_55','vitima_56_64','vitima_65+']].sum(), labels=dict(x="", y="")),
                    ])     
 
         victim_mariptual_state_fig = go.Figure(data=[
-                    go.Bar(name=county1_label, x=['Casado','Divorciado','Separado','Solteiro','União de Facto','Viúvo'], y=dummy_data_1[['vitima_casado','vitima_divorciado','vitima_separado','vitima_solteiro','vitima_uniao_de_facto','vitima_viuvo']].sum()),
-                    go.Bar(name=county2_label, x=['Casado','Divorciado','Separado','Solteiro','União de Facto','Viúvo'], y=dummy_data_2[['vitima_casado','vitima_divorciado','vitima_separado','vitima_solteiro','vitima_uniao_de_facto','vitima_viuvo']].sum()),
+                    go.Bar(name=county1_label, x=['Casado','Divorciado','Separado','Solteiro','União de Facto','Viúvo'], y=dummy_data_1[['vitima_casado','vitima_divorciado','vitima_separado','vitima_solteiro','vitima_uniao_de_facto','vitima_viuvo']].sum(), labels=dict(x="", y="")),
+                    go.Bar(name=county2_label, x=['Casado','Divorciado','Separado','Solteiro','União de Facto','Viúvo'], y=dummy_data_2[['vitima_casado','vitima_divorciado','vitima_separado','vitima_solteiro','vitima_uniao_de_facto','vitima_viuvo']].sum(), labels=dict(x="", y="")),
                    ])    
         victim_relation_woffender_fig = go.Figure(data=[
-                    go.Bar(name=county1_label, x=['Conjuge','Companheiro','Filho','Ex Companheiro','Progenitor','Outro'], y=dummy_data_1[['rel_agr_conjuge','rel_agr_companheiro','rel_agr_filho','rel_agr_ex_companheiro','rel_agr_progenitor','rel_agr_outro']].sum()),
-                    go.Bar(name=county2_label, x=['Conjuge','Companheiro','Filho','Ex Companheiro','Progenitor','Outro'], y=dummy_data_2[['rel_agr_conjuge','rel_agr_companheiro','rel_agr_filho','rel_agr_ex_companheiro','rel_agr_progenitor','rel_agr_outro']].sum()),
+                    go.Bar(name=county1_label, x=['Conjuge','Companheiro','Filho','Ex Companheiro','Progenitor','Outro'], y=dummy_data_1[['rel_agr_conjuge','rel_agr_companheiro','rel_agr_filho','rel_agr_ex_companheiro','rel_agr_progenitor','rel_agr_outro']].sum(), labels=dict(x="", y="")),
+                    go.Bar(name=county2_label, x=['Conjuge','Companheiro','Filho','Ex Companheiro','Progenitor','Outro'], y=dummy_data_2[['rel_agr_conjuge','rel_agr_companheiro','rel_agr_filho','rel_agr_ex_companheiro','rel_agr_progenitor','rel_agr_outro']].sum(), labels=dict(x="", y="")),
                    ])  
         offender_sex_fig = go.Figure(data=[
                     go.Bar(name=county1_label, x=["Feminino","Masculino"], y=[dummy_data_1["autor_crime_feminino"].sum(),dummy_data_1["autor_crime_masculino"].sum()]),
@@ -150,40 +150,105 @@ def build_gen_view_figs(year, all_country, county1, county2,counties_options):
                 ])
 
         offender_age_fig = go.Figure(data=[
-                    go.Bar(name=county1_label, x=["0-10","11-17","18-25","25-35","36-45","46-55","55-65","65+"], y=dummy_data_1[['autor_crime_0_17','autor_crime_18_25','autor_crime_26_35','autor_crime_36_45','autor_crime_46_55','autor_crime_56_64','autor_crime_65+']].sum()),
-                    go.Bar(name=county2_label, x=["0-17","18-25","25-35","36-45","46-55","55-65","65+"], y=dummy_data_2[['autor_crime_0_17','autor_crime_18_25','autor_crime_26_35','autor_crime_36_45','autor_crime_46_55','autor_crime_56_64','autor_crime_65+']].sum()),
+                    go.Bar(name=county1_label, x=["0-10","11-17","18-25","25-35","36-45","46-55","55-65","65+"], y=dummy_data_1[['autor_crime_0_17','autor_crime_18_25','autor_crime_26_35','autor_crime_36_45','autor_crime_46_55','autor_crime_56_64','autor_crime_65+']].sum(), labels=dict(x="", y="")),
+                    go.Bar(name=county2_label, x=["0-17","18-25","25-35","36-45","46-55","55-65","65+"], y=dummy_data_2[['autor_crime_0_17','autor_crime_18_25','autor_crime_26_35','autor_crime_36_45','autor_crime_46_55','autor_crime_56_64','autor_crime_65+']].sum(), labels=dict(x="", y="")),
                    ])     
 
         offender_mariptual_state_fig = go.Figure(data=[
-                    go.Bar(name=county1_label, x=['Casado','Divorciado','Separado','Solteiro','União de Facto','Viúvo'], y=dummy_data_1[['autor_crime_casado','autor_crime_divorciado','autor_crime_separado','autor_crime_solteiro','autor_crime_uniao_de_facto','autor_crime_viuvo']].sum()),
-                    go.Bar(name=county2_label, x=['Casado','Divorciado','Separado','Solteiro','União de Facto','Viúvo'], y=dummy_data_2[['autor_crime_casado','autor_crime_divorciado','autor_crime_separado','autor_crime_solteiro','autor_crime_uniao_de_facto','autor_crime_viuvo']].sum()),
+                    go.Bar(name=county1_label, x=['Casado','Divorciado','Separado','Solteiro','União de Facto','Viúvo'], y=dummy_data_1[['autor_crime_casado','autor_crime_divorciado','autor_crime_separado','autor_crime_solteiro','autor_crime_uniao_de_facto','autor_crime_viuvo']].sum(), labels=dict(x="", y="")),
+                    go.Bar(name=county2_label, x=['Casado','Divorciado','Separado','Solteiro','União de Facto','Viúvo'], y=dummy_data_2[['autor_crime_casado','autor_crime_divorciado','autor_crime_separado','autor_crime_solteiro','autor_crime_uniao_de_facto','autor_crime_viuvo']].sum(), labels=dict(x="", y="")),
                    ])    
         offender_relation_wvictim_fig = go.Figure(data=[
-                    go.Bar(name=county1_label, x=['Conjuge','Companheiro','Filho','Ex Companheiro','Progenitor','Outro'], y=dummy_data_1[['rel_agr_conjuge','rel_agr_companheiro','rel_agr_filho','rel_agr_ex_companheiro','rel_agr_progenitor','rel_agr_outro']].sum()),
-                    go.Bar(name=county2_label, x=['Conjuge','Companheiro','Filho','Ex Companheiro','Progenitor','Outro'], y=dummy_data_2[['rel_agr_conjuge','rel_agr_companheiro','rel_agr_filho','rel_agr_ex_companheiro','rel_agr_progenitor','rel_agr_outro']].sum()),
+                    go.Bar(name=county1_label, x=['Conjuge','Companheiro','Filho','Ex Companheiro','Progenitor','Outro'], y=dummy_data_1[['rel_agr_conjuge','rel_agr_companheiro','rel_agr_filho','rel_agr_ex_companheiro','rel_agr_progenitor','rel_agr_outro']].sum(), labels=dict(x="", y="")),
+                    go.Bar(name=county2_label, x=['Conjuge','Companheiro','Filho','Ex Companheiro','Progenitor','Outro'], y=dummy_data_2[['rel_agr_conjuge','rel_agr_companheiro','rel_agr_filho','rel_agr_ex_companheiro','rel_agr_progenitor','rel_agr_outro']].sum(), labels=dict(x="", y="")),
                    ])                                                                       
         criminal_fact_duration_fig = go.Figure(data=[
-                    go.Bar(name=county1_label, x=["1-6 Meses","7-12 Meses","2-6 Anos", "7-11 Anos", "12-25 Anos", "26-40 Anos", "40+ Anos"], y=dummy_data_1[['duracao_vitimacao_1_6_m','duracao_vitimacao_7_12_m','duracao_vitimacao_2_6_a','duracao_vitimacao_7_11_a','duracao_vitimacao_12_25_a','26_40_anos','40_mais_anos']].sum()),
-                    go.Bar(name=county2_label, x=["1-6 Meses","7-12 Meses","2-6 Anos", "7-11 Anos", "12-25 Anos", "26-40 Anos", "40+ Anos"], y=dummy_data_2[['duracao_vitimacao_1_6_m','duracao_vitimacao_7_12_m','duracao_vitimacao_2_6_a','duracao_vitimacao_7_11_a','duracao_vitimacao_12_25_a','26_40_anos','40_mais_anos']].sum()),
+                    go.Bar(name=county1_label, x=["1-6 Meses","7-12 Meses","2-6 Anos", "7-11 Anos", "12-25 Anos", "26-40 Anos", "40+ Anos"], y=dummy_data_1[['duracao_vitimacao_1_6_m','duracao_vitimacao_7_12_m','duracao_vitimacao_2_6_a','duracao_vitimacao_7_11_a','duracao_vitimacao_12_25_a','26_40_anos','40_mais_anos']].sum(), labels=dict(x="", y="")),
+                    go.Bar(name=county2_label, x=["1-6 Meses","7-12 Meses","2-6 Anos", "7-11 Anos", "12-25 Anos", "26-40 Anos", "40+ Anos"], y=dummy_data_2[['duracao_vitimacao_1_6_m','duracao_vitimacao_7_12_m','duracao_vitimacao_2_6_a','duracao_vitimacao_7_11_a','duracao_vitimacao_12_25_a','26_40_anos','40_mais_anos']].sum(), labels=dict(x="", y="")),
                    ])            
         
         df, geojson = get_data()
         choropleth_globalview=get_choropleth_globalview(df, geojson, highlights=[int(county1), int(county2)])
     else:
 
-        victim_sex_fig= px.bar(x=["Feminino","Masculino"], y=dummy_data[["vitimas_feminino","vitimas_masculino"]].sum(), title="Sexo")
-        victim_age_fig= px.bar(x=["0-10","11-17","18-25","25-35","36-45","46-55","55-65","65+"], y=dummy_data[['vitima_0_10','vitima_11_17','vitima_18_25','vitima_26_35','vitima_36_45','vitima_46_55','vitima_56_64','vitima_65+']].sum())
-        victim_mariptual_state_fig= px.bar(x=['Casado','Divorciado','Separado','Solteiro','União de Facto','Viúvo'], y=dummy_data[['vitima_casado','vitima_divorciado','vitima_separado','vitima_solteiro','vitima_uniao_de_facto','vitima_viuvo']].sum())
-        victim_relation_woffender_fig= px.bar(x=['Conjuge','Companheiro','Filho','Ex Companheiro','Progenitor','Outro'], y=dummy_data[['rel_agr_conjuge','rel_agr_companheiro','rel_agr_filho','rel_agr_ex_companheiro','rel_agr_progenitor','rel_agr_outro']].sum())
-        offender_sex_fig= px.bar(x=["Feminino","Masculino"], y=dummy_data[["autor_crime_feminino","autor_crime_masculino"]].sum())
-        offender_age_fig= px.bar(x=["0-17","18-25","25-35","36-45","46-55","55-65","65+"], y=dummy_data[['autor_crime_0_17','autor_crime_18_25','autor_crime_26_35','autor_crime_36_45','autor_crime_46_55','autor_crime_56_64','autor_crime_65+']].sum())
-        offender_mariptual_state_fig=px.bar(x=['Casado','Divorciado','Separado','Solteiro','União de Facto','Viúvo'], y=dummy_data[['autor_crime_casado','autor_crime_divorciado','autor_crime_separado','autor_crime_solteiro','autor_crime_uniao_de_facto','autor_crime_viuvo']].sum())
-        offender_relation_wvictim_fig= px.bar(x=['Conjuge','Companheiro','Filho','Ex Companheiro','Progenitor','Outro'], y=dummy_data[['rel_agr_conjuge','rel_agr_companheiro','rel_agr_filho','rel_agr_ex_companheiro','rel_agr_progenitor','rel_agr_outro']].sum())
-        criminal_fact_duration_fig= px.bar(x=["1-6 Meses","7-12 Meses","2-6 Anos", "7-11 Anos", "12-25 Anos", "26-40 Anos", "40+ Anos"], y=dummy_data[['duracao_vitimacao_1_6_m','duracao_vitimacao_7_12_m','duracao_vitimacao_2_6_a','duracao_vitimacao_7_11_a','duracao_vitimacao_12_25_a','26_40_anos','40_mais_anos']].sum())
+        victim_sex_fig= px.bar(x=["Feminino","Masculino"], y=dummy_data[["vitimas_feminino","vitimas_masculino"]].sum(), title="Sexo", labels=dict(x="", y=""))
+        victim_age_fig= px.bar(x=["0-10","11-17","18-25","25-35","36-45","46-55","55-65","65+"], y=dummy_data[['vitima_0_10','vitima_11_17','vitima_18_25','vitima_26_35','vitima_36_45','vitima_46_55','vitima_56_64','vitima_65+']].sum(), labels=dict(x="", y=""))
+        victim_mariptual_state_fig= px.bar(x=['Casado','Divorciado','Separado','Solteiro','União de Facto','Viúvo'], y=dummy_data[['vitima_casado','vitima_divorciado','vitima_separado','vitima_solteiro','vitima_uniao_de_facto','vitima_viuvo']].sum(), labels=dict(x="", y=""))
+        victim_relation_woffender_fig= px.bar(x=['Conjuge','Companheiro','Filho','Ex Companheiro','Progenitor','Outro'], y=dummy_data[['rel_agr_conjuge','rel_agr_companheiro','rel_agr_filho','rel_agr_ex_companheiro','rel_agr_progenitor','rel_agr_outro']].sum(), labels=dict(x="", y=""))
+        offender_sex_fig= px.bar(x=["Feminino","Masculino"], y=dummy_data[["autor_crime_feminino","autor_crime_masculino"]].sum(), labels=dict(x="", y=""))
+        offender_age_fig= px.bar(x=["0-17","18-25","25-35","36-45","46-55","55-65","65+"], y=dummy_data[['autor_crime_0_17','autor_crime_18_25','autor_crime_26_35','autor_crime_36_45','autor_crime_46_55','autor_crime_56_64','autor_crime_65+']].sum(), labels=dict(x="", y=""))
+        offender_mariptual_state_fig=px.bar(x=['Casado','Divorciado','Separado','Solteiro','União de Facto','Viúvo'], y=dummy_data[['autor_crime_casado','autor_crime_divorciado','autor_crime_separado','autor_crime_solteiro','autor_crime_uniao_de_facto','autor_crime_viuvo']].sum(), labels=dict(x="", y=""))
+        offender_relation_wvictim_fig= px.bar(x=['Conjuge','Companheiro','Filho','Ex Companheiro','Progenitor','Outro'], y=dummy_data[['rel_agr_conjuge','rel_agr_companheiro','rel_agr_filho','rel_agr_ex_companheiro','rel_agr_progenitor','rel_agr_outro']].sum(), labels=dict(x="", y=""))
+        criminal_fact_duration_fig= px.bar(x=["1-6 Meses","7-12 Meses","2-6 Anos", "7-11 Anos", "12-25 Anos", "26-40 Anos", "40+ Anos"], y=dummy_data[['duracao_vitimacao_1_6_m','duracao_vitimacao_7_12_m','duracao_vitimacao_2_6_a','duracao_vitimacao_7_11_a','duracao_vitimacao_12_25_a','26_40_anos','40_mais_anos']].sum(), labels=dict(x="", y=""))
 
 
         df, geojson = get_data()
         choropleth_globalview=get_choropleth_globalview(df, geojson)
+
+
+    victim_sex_fig.update_layout(
+            title={
+            'text': "Sexo",
+            'y':0.9,
+            'x':0.5,
+            'xanchor': 'center',
+            'yanchor': 'top'})
+    victim_age_fig.update_layout(
+            title={
+            'text': "Idade",
+            'y':0.9,
+            'x':0.5,
+            'xanchor': 'center',
+            'yanchor': 'top'})
+    victim_mariptual_state_fig.update_layout(
+            title={
+            'text': "Estado Civil",
+            'y':0.9,
+            'x':0.5,
+            'xanchor': 'center',
+            'yanchor': 'top'})
+    victim_relation_woffender_fig.update_layout(
+            title={
+            'text': "Relação com Agressor(a)",
+            'y':0.9,
+            'x':0.5,
+            'xanchor': 'center',
+            'yanchor': 'top'})
+    offender_sex_fig.update_layout(
+            title={
+            'text': "Sexo",
+            'y':0.9,
+            'x':0.5,
+            'xanchor': 'center',
+            'yanchor': 'top'})
+    offender_age_fig.update_layout(
+            title={
+            'text': "Idade",
+            'y':0.9,
+            'x':0.5,
+            'xanchor': 'center',
+            'yanchor': 'top'})
+    offender_mariptual_state_fig.update_layout(
+            title={
+            'text': "Estado Civil",
+            'y':0.9,
+            'x':0.5,
+            'xanchor': 'center',
+            'yanchor': 'top'})
+    offender_relation_wvictim_fig.update_layout(
+            title={
+            'text': "Relaçao com a Vítima",
+            'y':0.9,
+            'x':0.5,
+            'xanchor': 'center',
+            'yanchor': 'top'})
+    criminal_fact_duration_fig.update_layout(
+            title={
+            'text': "Duração",
+            'y':0.9,
+            'x':0.5,
+            'xanchor': 'center',
+            'yanchor': 'top'})
 
     return victim_sex_fig,victim_age_fig, victim_mariptual_state_fig, victim_relation_woffender_fig,offender_sex_fig,offender_age_fig,offender_mariptual_state_fig,offender_relation_wvictim_fig,criminal_fact_duration_fig, choropleth_globalview
 

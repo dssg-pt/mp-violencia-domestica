@@ -396,19 +396,15 @@ def get_global_view():
                         html.H4('A Vítima', style={'width': '100%', "margin-top": "0px", "font-weight": "bold","text-align": "center"}),
                         html.Div([
                             html.Div([
-                                html.H5('Sexo'),
                                 dcc.Graph(id='victim_sex',)
                             ], className="col-md-6"),
                             html.Div([
-                                html.H5('Faixa Etária'),
                                 dcc.Graph(id='victim_age',)
                             ], className="col-md-6"),
                             html.Div([
-                                html.H5('Estado Civil'),
                                 dcc.Graph(id='victim_mariptual_state', )
                             ], className="col-md-6"),
                             html.Div([
-                                html.H5('Relação com o Autor'),
                                 dcc.Graph(id='victim_relation_woffender', )
                             ], className="col-md-6")
                         ], className="row", style={'width': '100%'}),
@@ -416,19 +412,15 @@ def get_global_view():
                         html.H4('O Autor', style={'width': '100%', "margin-top": "0px", "font-weight": "bold","text-align": "center"}),
                         html.Div([
                             html.Div([
-                                html.H5('Sexo'),
-                                dcc.Graph(id='offender_sex', )
+                                dcc.Graph(id='offender_sex')
                             ], className="col-md-6"),
                             html.Div([
-                                html.H3('Faixa Etária'),
                                 dcc.Graph(id='offender_age', )
                             ], className="col-md-6"),
                             html.Div([
-                                html.H3('Estado Civil'),
                                 dcc.Graph(id='offender_mariptual_state', )
                             ], className="col-md-6"),
                             html.Div([
-                                html.H3('Relação com a Vítima'),
                                 dcc.Graph(id='offender_relation_wvictim', )
                             ], className="col-md-6")
                         ], className="row", style={'width': '100%'}),
@@ -472,7 +464,6 @@ def get_global_view():
                             "Facto Criminoso", style={"margin-top": "0px", "font-weight": "bold", "width":"100%"}
                         ),
                         html.Div([
-                            html.H5('Duração'),
                             dcc.Graph(id='criminal_fact_duration', )
                         ], className="col-md-4")
                     ], className="row",  style={'width': '100%'}),
