@@ -52,7 +52,6 @@ sidebar = html.Div([
                 dbc.NavLink("Sobre", href="/", active="exact"),
                 dbc.NavLink("Destaques", href="/page-1", active="exact"),
                 dbc.NavLink("Visão Global", href="/globalview", active="exact"),
-                dbc.NavLink("Dados Demográficos", href="/cartographic_view", active="exact"),
             ],
             vertical=True,
             pills=True,
