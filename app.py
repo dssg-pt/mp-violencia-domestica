@@ -118,7 +118,7 @@ def toggle_collapse(n, is_open):
 @app.callback(Output("page-content", "children"), Input("url", "pathname"), Input("memory_output", "data"))
 def render_page_content(pathname, data):
     if pathname == "/":
-        return ""
+        return about()
     elif pathname == "/page-1":
         gen_view = get_general_view()
         return gen_view
@@ -218,7 +218,7 @@ def get_general_view():
                          html.P("PROCESSOS DE APOIO", className="mini_container_label")],
                         id="support",
                         className="mini_container",
-                        style={"background-color": "#ccffcc"}
+                        style={"background-color": "#f58f47"}
 
                     ),
                     html.Div(
@@ -226,14 +226,14 @@ def get_general_view():
                          html.P("VÍTIMAS", className="mini_container_label")],
                         id="victims",
                         className="mini_container",
-                        style={"background-color": "#ccffcc"}
+                        style={"background-color": "#f58f47"}
                     ),
                     html.Div(
                         [html.H4(69, className="mini_container_text"),
                          html.P("SERVIÇOS DE PROXIMIDADE", className="mini_container_label")],
                         id="victims",
                         className="mini_container",
-                        style={"background-color": "#ccffcc"}
+                        style={"background-color": "#f58f47"}
                     )
                 ],
                 id="info-container",
@@ -255,7 +255,7 @@ def get_general_view():
                          html.P([html.B(24), " Dia"])],
                         id="woman_number",
                         className="mini_container",
-                        style={"background-color": "#ff000033",
+                        style={
                                "background-image": "url(assets/women.png)",
                                "background-repeat": "no-repeat",
                                "background-size": "30%",
@@ -269,7 +269,7 @@ def get_general_view():
                          html.P([html.B(5), " Dia"])],
                         id="children_number",
                         className="mini_container",
-                        style={"background-color": "#ff000033",
+                        style={
                                "background-image": "url(assets/children_1.png)",
                                "background-repeat": "no-repeat",
                                "background-size": "30%",
@@ -283,7 +283,7 @@ def get_general_view():
                          html.P([html.B(4), " Dia"])],
                         id="men_numbers",
                         className="mini_container",
-                        style={"background-color": "#ff000033",
+                        style={
                                "background-image": "url(assets/men.png)",
                                "background-repeat": "no-repeat",
                                "background-size": "30%",
@@ -297,7 +297,7 @@ def get_general_view():
                          html.P([html.B(4), " Dia"])],
                         id="formativeactivies",
                         className="mini_container",
-                        style={"background-color": "#ff000033",
+                        style={
                                "background-image": "url(assets/senior.png)",
                                "background-repeat": "no-repeat",
                                "background-size": "30%",
@@ -313,7 +313,7 @@ def get_general_view():
                 html.Img(src=app.get_asset_url('simple-search.png'),
                          style={
                              'height': '5%', 'width': '5%', 'display': 'inline-block'
-                         }), "    EM DETALHE"], style={"margin-top": "10px", "font-weight": "bold",
+                         }), "    EM DETALHE"], style={"margin-top": "20px", "font-weight": "bold",
                                                                     'position': 'relative'}),
             html.Div(
                 [
@@ -462,7 +462,7 @@ def get_global_view():
                         daq.BooleanSwitch(
                             id='my-toggle-switch',
                             on=True,
-                            color= '#ccffcc',
+                            color= '#ffcc99',
                             style = {"margin-left":"5px"}
                         )], style={"width":"100%", "display":"flex"}),
                      html.Label([
@@ -554,6 +554,25 @@ def update_da(all_country,year, county1, county2):
     return victim_sex_fig, victim_age_fig, victim_mariptual_state_fig, victim_relation_woffender_fig, offender_sex_fig, offender_age_fig, offender_mariptual_state_fig, offender_relation_wvictim_fig, criminal_fact_type_fig, criminal_fact_duration_fig, criminal_fact_local_fig, choropleth_global_view
 
 
+def about():
+
+    return html.Div(
+
+        [ 
+            html.H1("Sobre", style={"font-weight": "bold", "horizontal-alignment": "center"}),
+            html.P(["De acordo com o ", dcc.Link("relatório anual da APAV", href="https://apav.pt/apav_v3/images/pdf/Estatisticas_APAV-Relatorio_Anual_2019.pdf"), "( Associação Portuguesa de Apoio à Vítima ), a maioria dos crimes assinalados em 2019 disseram respeito a crimes contra as pessoas (95,9%), com especial relevo para os crimes de Violência Doméstica (79%). O relatório anual da APAV, mas também outros trabalhos, já cruzam várias fontes de dados. No geral, pode dizer-se que existem muitos dados relativamente a este assunto. No entanto, é possível identificar algumas lacunas na comunicação e partilha destes dados:"]),
+            html.Ul([
+
+                html.Li("não existe um repositório de dados em formato facilmente acessível e processável (ex: .csv)"),
+                html.Li("não existem dashboards interativos ou que sejam constantemente alimentados por novos dados"),
+                html.Li("apesar de existirem muitas análises a nível de evolução temporal dos números associados à violência doméstica em Portugal, as análises a nível geográfico são raras")
+
+            ]),
+
+            html.P("Assim, surge este mini-projeto com o objetivo de facilitar o acesso a dados sobre violência doméstica em Portugal num repositório aberto e disponibilizar um dashboard com os principais indicadores.")
+            ,html.P(["Tendo em conta algumas limitações do projeto, nomeadamente incoerência de algumas fontes de dados ou de alguns indicadores no que respeita à granularidade, ", html.B("alguns dados correspondem a valores simulados. Desse modo, as análises daí resultantes não têm qualquer interpretabilidade."), "Os valores correspondentes a dados simulados encontram-se assinalados com um *. Esta é uma prova de conceito. No futuro, estes dados serão substituídos por dados reais, recolhidos em colaboração com a APAV."])
+            ]
+    , style={'position': "relative", "left": "50px", "horizontal-alignment": "center", "width":"85%"})
 
 if __name__ == '__main__':
     app.run_server(debug=True)

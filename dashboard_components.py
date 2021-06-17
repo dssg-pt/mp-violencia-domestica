@@ -15,8 +15,8 @@ layout = dict(
     automargin=True,
     margin=dict(l=5, r=5, b=20, t=30),
     hovermode="closest",
-    plot_bgcolor="#F9F9F9",
-    paper_bgcolor="#F9F9F9",
+    plot_bgcolor="#FFFFFF",
+    paper_bgcolor="#FFFFFF",
     legend=dict(font=dict(size=10), orientation="h")
 )
 
@@ -36,7 +36,7 @@ data = [
         hoverinfo="text+percent",
         textinfo="label+percent+name",
         hole=0.5,
-        marker=dict(colors=["#fac1b7", "#a9bb95", "#92d8d8"])
+        marker=dict(colors=["#b93685", "#42049d", "#f58f47"])
     )
 ]
 layout_pie["title"] = "TIPO DE CONTACTO"
@@ -68,7 +68,7 @@ crime_location = [
         hoverinfo="text+percent",
         textinfo="label+percent+name",
         hole=0.5,
-        marker=dict(colors=["#fac1b7", "#a9bb95", "#92d8d8", "#e5f799", "#d599f7", "#ffc369"
+        marker=dict(colors=["#b93685", "#42049d", "#f58f47", "#f9d02b", "#7504a7", "#19058c"
                             ])
     )
 ]
@@ -99,7 +99,7 @@ relationship_data = [
         hoverinfo="text+percent",
         textinfo="label+percent+name",
         hole=0.5,
-        marker=dict(colors=["#fac1b7", "#a9bb95", "#92d8d8", "#e5f799", "#d599f7", "#ffc369"
+        marker=dict(colors=["#b93685", "#42049d", "#f58f47", "#f9d02b", "#7504a7", "#19058c"
                             ])
     )
 ]
@@ -127,7 +127,7 @@ victim_sex_data = [
         text=["Feminino", "Masculino"],
         hoverinfo="text+percent",
         textinfo="label+percent+name",
-        marker=dict(colors=["#fac1b7",  "#92d8d8"])
+        marker=dict(colors=["#19058c",  "#e56a5d"])
     )
 ]
 
@@ -151,7 +151,7 @@ offender_sex_data = [
         text=["Feminino", "Masculino"],
         hoverinfo="text+percent",
         textinfo="label+percent+name",
-        marker=dict(colors=["#fac1b7",  "#92d8d8"])
+        marker=dict(colors=["#19058c",  "#e56a5d"])
     )
 ]
 
@@ -215,7 +215,7 @@ data_2 = [go.Bar(y=y,
                orientation='h',
                name='Agressores',
                hoverinfo='x',
-               marker=dict(color='blue')
+               marker=dict(color="#19058c")
                ),
         go.Bar(y=y,
                x=-1*victim_bins,
@@ -223,7 +223,7 @@ data_2 = [go.Bar(y=y,
                name='Vítimas',
                text=-1 * victim_bins.astype('int'),
                hoverinfo='text',
-               marker=dict(color='red')
+               marker=dict(color=  "#e56a5d")
                )]
 layout_2["title"] = "CASOS POR PERFIL/IDADE"
 

@@ -4,7 +4,7 @@
 }
 
 body {
-  background-color: #f2f2f2;
+  background-color: #ffffff;
   margin: 5%;
 }
 
@@ -23,7 +23,7 @@ body {
 
 .pretty_container {
   border-radius: 5px;
-  background-color: #f9f9f9;
+  background-color: #ffffff;
   margin: 10px;
   padding: 15px;
   position: relative;
@@ -101,20 +101,22 @@ body {
   width: 28.75%;
   border-radius: 5px;
   margin: 10px;
+  margin-top: 20px;
   padding: 10px;
   position: relative;
   box-shadow: 2px 2px 2px lightgrey;
-  background-color: #ff000033;
+  background-color: #f9d02b;
 }
 
 
 
 .profile_container {
 width: 28.75%;
-background-color: #c5d9e6;
+background-color: #b93685;
 box-shadow: 2px 2px 2px lightgrey;
 border-radius: 5px;
 margin: 10px;
+margin-top: 20px;
 padding: 10px;
 position: relative;
 
@@ -171,7 +173,6 @@ position: relative;
   transform: translate(30px, 349px);
 }
 
-
 .sidebar{
   position:fixed;
   top:2.5rem;
@@ -179,10 +180,15 @@ position: relative;
   bottom:0;
   width:22rem;
   padding: 2rem 1rem;
-  background-color: #f8f9fa;
+  background-color: #f2f2f2;
   "z-index": 1;
   "overflow-x": "hidden";
   "transition": "all 0.5s";
+}
+
+.nav-pills .nav-link.active {
+  color: #fff;
+  background-color: #b93685;
 }
 
 .content {
@@ -219,40 +225,39 @@ position: relative;
 }
 
 .when_header{
-  background-color: #aaff022e;
+  font-weight: bold;
   padding: 20px;
   background-image: url(when.png);
+  text-indent: 50px;
   background-repeat: no-repeat;
-  background-size: 4.8%;
-  background-position-y: bottom;
-  background-position-x: right;
-}
+  background-size: 50px;
+  background-position-y:center;
+
+} 
 
 
 .who_header{
-  background-color: #aaff022e;
+  font-weight: bold;
   padding: 20px;
   background-image: url(who.png);
   background-repeat: no-repeat;
-  background-size: 8.5%;
-  background-position-y: bottom;
-  background-position-x: right;
-  text-align: center;
+  background-size: 50px;
+  background-position-y:center;
+  text-align: left;
+  text-indent: 50px;
   align-self: center;
   margin-top: 15px;
 }
 
 .where_header{
-  background-color: #aaff022e;
+  font-weight: bold;
   padding: 20px;
   background-image: url(where.png);
   background-repeat: no-repeat;
-  background-size: 12%;
-  background-position-y: bottom;
-  background-position-x: right;
-  text-align: center;
-  align-self: center;
-  text-align: center;
+  background-size: 50px;
+  background-position-y:center;
+  text-align: left;
+  text-indent: 50px;
   align-self: center;
   margin-top: 15px;
 }
