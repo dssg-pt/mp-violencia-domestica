@@ -362,14 +362,7 @@ def get_general_view():
                         [dcc.Graph(id="conctact_type_graph", figure=contact_type_graph)],
                         className="pretty_container three columns", style={"left": "9.75%"}
                     )
-                ], className="row"),
-            html.Footer(
-                [
-                    html.B("Fonte: "),
-                    html.A("https://apav.pt/apav_v3/images/pdf/Estatisticas_APAV_Relatorio_Anual_2020.pdf")
-                ],
-                className="footer"
-            )
+                ], className="row")
         ],
         id="right-column",
         className="eight columns",
@@ -385,31 +378,16 @@ def get_global_view():
                 html.H3("Quando?", style = {"width":"100%"}, className="when_header"),
                 html.Div([dcc.RangeSlider(
                     id="year_slider",
-                    min=2000,
-                    max=2020,
-                    value=[2000, 2020],
+                    min=2013,
+                    max=2018,
+                    value=[2013, 2018],
                     marks={
-                        2000: '2000',
-                        2001: '2001',
-                        2002: '20002',
-                        2003: '2003',
-                        2004: '2004',
-                        2005: '2005',
-                        2006: '2006',
-                        2007: '2007',
-                        2008: '2008',
-                        2009: '2009',
-                        2010: '2010',
-                        2011: '2011',
-                        2012: '2012',
                         2013: '2013',
                         2014: '2014',
                         2015: '2015',
                         2016: '2016',
                         2017: '2017',
-                        2018: '2018',
-                        2019: '2019',
-                        2020: '2020',
+                        2018: '2018'
                     }
                 )], style ={"width": "100%"}),
                 html.Br(),
@@ -494,27 +472,11 @@ def get_global_view():
                             "Facto Criminoso", style={"margin-top": "0px", "font-weight": "bold", "width":"100%"}
                         ),
                         html.Div([
-                            html.H5('Tipo'),
-                            dcc.Graph(id='criminal_fact_type', )
-                        ], className="col-md-4"),
-                        html.Div([
                             html.H5('Duração'),
                             dcc.Graph(id='criminal_fact_duration', )
-                        ], className="col-md-4"),
-                        html.Div([
-                            html.H5('Local'),
-                            dcc.Graph(id='criminal_fact_local', )
-                        ], className="col-md-4"),
+                        ], className="col-md-4")
                     ], className="row",  style={'width': '100%'}),
             ], className="pretty_container row"),
-
-            html.Footer(
-                [
-                    html.B("Fonte: "),
-                    html.A("https://apav.pt/apav_v3/images/pdf/Estatisticas_APAV_Relatorio_Anual_2020.pdf")
-                ],
-                className="footer"
-            )
         ],
         id="right_column",
         className="eight columns",
@@ -543,15 +505,15 @@ def update_county_filters(value, county1, county2):
     return value, value, county1, county2, counties_options_1, counties_options_2;
 
 @app.callback([Output('victim_sex', 'figure'),Output('victim_age', 'figure'),Output('victim_mariptual_state', 'figure'),Output('victim_relation_woffender', 'figure'),Output('offender_sex', 'figure'),Output('offender_age', 'figure'),
-    Output('offender_mariptual_state', 'figure'),Output('offender_relation_wvictim', 'figure'),Output('criminal_fact_type', 'figure'),Output('criminal_fact_duration', 'figure'),Output('criminal_fact_local', 'figure'), Output('choro_global', 'figure')],
+    Output('offender_mariptual_state', 'figure'),Output('offender_relation_wvictim', 'figure'),Output('criminal_fact_duration', 'figure'),Output('choro_global', 'figure')],
     [dash.dependencies.Input('my-toggle-switch', 'on'), dash.dependencies.Input('year_slider', 'value'), dash.dependencies.Input('county1_dpdn', 'value'),dash.dependencies.Input('county2_dpdn', 'value')]
 )
 
 def update_da(all_country,year, county1, county2):
   ###  this method return all figs to present on the view 
     transformed_value = [v for v in year]
-    victim_sex_fig, victim_age_fig, victim_mariptual_state_fig, victim_relation_woffender_fig, offender_sex_fig, offender_age_fig, offender_mariptual_state_fig, offender_relation_wvictim_fig, criminal_fact_type_fig, criminal_fact_duration_fig, criminal_fact_local_fig, choropleth_global_view = build_gen_view_figs(transformed_value, all_country, county1, county2, counties_options)
-    return victim_sex_fig, victim_age_fig, victim_mariptual_state_fig, victim_relation_woffender_fig, offender_sex_fig, offender_age_fig, offender_mariptual_state_fig, offender_relation_wvictim_fig, criminal_fact_type_fig, criminal_fact_duration_fig, criminal_fact_local_fig, choropleth_global_view
+    victim_sex_fig, victim_age_fig, victim_mariptual_state_fig, victim_relation_woffender_fig, offender_sex_fig, offender_age_fig, offender_mariptual_state_fig, offender_relation_wvictim_fig, criminal_fact_duration_fig, choropleth_global_view = build_gen_view_figs(transformed_value, all_country, county1, county2, counties_options)
+    return victim_sex_fig, victim_age_fig, victim_mariptual_state_fig, victim_relation_woffender_fig, offender_sex_fig, offender_age_fig, offender_mariptual_state_fig, offender_relation_wvictim_fig, criminal_fact_duration_fig, choropleth_global_view
 
 
 

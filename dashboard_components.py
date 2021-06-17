@@ -15,8 +15,6 @@ layout = dict(
     automargin=True,
     margin=dict(l=5, r=5, b=20, t=30),
     hovermode="closest",
-    plot_bgcolor="#F9F9F9",
-    paper_bgcolor="#F9F9F9",
     legend=dict(font=dict(size=10), orientation="h")
 )
 
