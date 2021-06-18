@@ -349,18 +349,25 @@ def get_general_view():
                         )
 
                     ],
-                        className="pretty_container", style={"left": "7.5%", "width": "74.5%"},
+                        className="pretty_container", style={"width": "100%"},
                         id="parent_sex_container"),
 
-                    html.Div(
-                        [dcc.Graph(id="age_by_sex_graph", figure=age_by_sex_graph)],
-                        className="pretty_container three columns", style={"left": "9.75%"}
-                    ),
+                   html.Div([
 
-                    html.Div(
-                        [dcc.Graph(id="conctact_type_graph", figure=contact_type_graph)],
-                        className="pretty_container three columns", style={"left": "9.75%"}
-                    )
+                        html.Div(
+                            [dcc.Graph(id="age_by_sex_graph", figure=age_by_sex_graph)],
+                            style={"width": "50%", "position": "relative", "float": "left",
+                            }
+                        ),
+
+                        html.Div(
+                            [dcc.Graph(id="conctact_type_graph", figure=contact_type_graph)],
+                            style={"width": "50%", "float": "left", "position": "relative"}
+                        )
+
+                    ],
+                        className="pretty_container", style={"width": "100%"},
+                        id="parent_misc_container"),
                 ], className="row")
         ],
         id="right-column",

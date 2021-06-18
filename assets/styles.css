@@ -25,7 +25,6 @@ body {
   margin: 10px;
   padding: 15px;
   position: relative;
-  box-shadow: 2px 2px 2px lightgrey;
 }
 
 .bare_container {
@@ -102,7 +101,6 @@ body {
   margin-top: 20px;
   padding: 10px;
   position: relative;
-  box-shadow: 2px 2px 2px lightgrey;
   background-color: #f9d02b;
 }
 
@@ -111,7 +109,6 @@ body {
 .profile_container {
 width: 28.75%;
 background-color: #b93685;
-box-shadow: 2px 2px 2px lightgrey;
 border-radius: 5px;
 margin: 10px;
 margin-top: 20px;
