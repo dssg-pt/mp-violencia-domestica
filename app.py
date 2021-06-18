@@ -257,7 +257,7 @@ def get_general_view():
                         style={
                                "background-image": "url(assets/women.png)",
                                "background-repeat": "no-repeat",
-                               "background-size": "30%",
+                               "background-size": "contain",
                                "background-position-y": "bottom",
                                "background-position-x": "right",
                                }
@@ -271,7 +271,7 @@ def get_general_view():
                         style={
                                "background-image": "url(assets/children_1.png)",
                                "background-repeat": "no-repeat",
-                               "background-size": "30%",
+                               "background-size": "contain",
                                "background-position-y": "bottom",
                                "background-position-x": "right",
                                }
@@ -285,7 +285,7 @@ def get_general_view():
                         style={
                                "background-image": "url(assets/men.png)",
                                "background-repeat": "no-repeat",
-                               "background-size": "30%",
+                               "background-size": "contain",
                                "background-position-y": "bottom",
                                "background-position-x": "right",
                                }
@@ -299,7 +299,7 @@ def get_general_view():
                         style={
                                "background-image": "url(assets/senior.png)",
                                "background-repeat": "no-repeat",
-                               "background-size": "25%",
+                               "background-size": "contain",
                                "background-position-y": "bottom",
                                "background-position-x": "right",
                                }
