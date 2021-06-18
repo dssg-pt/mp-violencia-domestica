@@ -460,7 +460,7 @@ def get_global_view():
                         )
                     ], style={"width":"50%", }),
 
-                    dcc.Graph(id="choro_global", )
+                    dcc.Graph(id="choro_global",style={'height': '1800px'} )
 
                  ], style={'width': '40%'}),
 
