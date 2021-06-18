@@ -299,7 +299,7 @@ def get_general_view():
                         style={
                                "background-image": "url(assets/senior.png)",
                                "background-repeat": "no-repeat",
-                               "background-size": "30%",
+                               "background-size": "25%",
                                "background-position-y": "bottom",
                                "background-position-x": "right",
                                }
