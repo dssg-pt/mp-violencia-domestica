@@ -221,7 +221,7 @@ def get_general_view():
 
                     ),
                     html.Div(
-                        [html.H4(6887, className="mini_container_text"),
+                        [html.H4(6859, className="mini_container_text"),
                          html.P("VÍTIMAS", className="mini_container_label")],
                         id="victims",
                         className="mini_container",
@@ -250,8 +250,8 @@ def get_general_view():
 
                     html.Div(
                         [html.H4("MULHERES", className="mini_container_label"),
-                         html.P([html.B(8720), " ANO"]), html.P([html.B(167), " Semana"]),
-                         html.P([html.B(24), " Dia"])],
+                         html.P([html.B(5915), " ANO"]), html.P([html.B(114), " Semana"]),
+                         html.P([html.B(16), " Dia"])],
                         id="woman_number",
                         className="mini_container",
                         style={
@@ -264,8 +264,8 @@ def get_general_view():
                     ),
                     html.Div(
                         [html.H4("CRIANÇAS", className="mini_container_label"),
-                         html.P([html.B(1841), " ANO"]), html.P([html.B(35), " Semana"]),
-                         html.P([html.B(5), " Dia"])],
+                         html.P([html.B('365*'), " ANO"]), html.P([html.B('7*'), " Semana"]),
+                         html.P([html.B('1*'), " Dia"])],
                         id="children_number",
                         className="mini_container",
                         style={
@@ -278,8 +278,8 @@ def get_general_view():
                     ),
                     html.Div(
                         [html.H4("HOMENS", className="mini_container_label"),
-                         html.P([html.B(1627), " ANO"]), html.P([html.B(31), " Semana"]),
-                         html.P([html.B(4), " Dia"])],
+                         html.P([html.B(944), " ANO"]), html.P([html.B(18), " Semana"]),
+                         html.P([html.B(3), " Dia"])],
                         id="men_numbers",
                         className="mini_container",
                         style={
@@ -292,8 +292,8 @@ def get_general_view():
                     ),
                     html.Div(
                         [html.H4("IDOSOS", className="mini_container_label"),
-                         html.P([html.B(1626), " ANO"]), html.P([html.B(31), " Semana"]),
-                         html.P([html.B(4), " Dia"])],
+                         html.P([html.B('730*'), " ANO"]), html.P([html.B('14*'), " Semana"]),
+                         html.P([html.B('2*'), " Dia"])],
                         id="formativeactivies",
                         className="mini_container",
                         style={
